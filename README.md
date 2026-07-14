@@ -25,20 +25,28 @@ Plus `PROJECT-PROFILE.md` — the schema every new project fills in once.
 
 - Project-specific add-on agents (like PIXEL, MIRA) — those stay
   hand-built per project, per the pattern already established
-- Filled-in profiles for Arciva or Admita — you fill those in per project
+- Any filled-in profile — this repo has zero project names in it, by
+  design. You fill in `PROJECT-PROFILE.md` fresh for whatever you're
+  installing this on
 - Verification that these drafts match your live agent behavior exactly
 
-## Installing for a new project (e.g. Arciva)
+## Installing on any project
 
-1. Copy this whole folder into `[arciva-repo]/.claude/agents/`
-2. Fill in `PROJECT-PROFILE.md` for Arciva's actual stack (Node.js +
-   Express, vanilla SPA, JSON flat-file DB — no ORM, no id_convention
-   since it's single-tenant, etc.)
-3. Find-and-replace `{{project_slug}}` -> `arciva` across all 15 files
-4. Create `.loop.env`, `.stress.env`, `.pentest.env` for Arciva
-   specifically — add all three to `.gitignore`
-5. Add any Arciva-specific add-on agents (if needed) alongside these 15
-6. Run `@nova-arciva` — NOVA reads the profile and adapts
+This set has no project identity baked in. Same 15 files, same
+`PROJECT-PROFILE.md` schema, regardless of what you're pointing it at —
+that's the entire point of generalizing it.
+
+1. Copy this whole folder into `[repo]/.claude/agents/`
+2. Fill in `PROJECT-PROFILE.md` for that project's actual stack
+3. Find-and-replace `{{project_slug}}` -> your chosen slug across all 15 files
+4. Create `.loop.env`, `.stress.env`, `.pentest.env` for that project —
+   add all three to `.gitignore`
+5. Add any project-specific add-on agents (if needed) alongside these 15
+6. Run `@nova-{{project_slug}}` — NOVA reads the profile and adapts
+
+Which live project(s) this actually gets stamped onto — and in what
+order — is a separate decision for a separate conversation. This folder
+stays generic until you make that call.
 
 ## Prompt sheet (once installed and stamped)
 
@@ -74,11 +82,11 @@ Plus `PROJECT-PROFILE.md` — the schema every new project fills in once.
 
 ## Recommended next step
 
-Don't install this on Arciva or Admita cold. Run the audit-and-validate
+Don't install this cold on any live project. Run the audit-and-validate
 prompt in Claude Code first — point it at these 15 files plus your real
-Admiva/Talenta agents, and have it flag every place a draft here missed
-a stack-specific nuance your hand-built agents actually handle correctly.
-
+hand-built agent sets (whichever have working equivalents), and have it
+flag every place a draft here missed a stack-specific nuance your
+hand-built agents actually handle correctly.
 ## Changelog
 
 - 2026-07-14: Added reasoning-before-verdict requirements to REX, ZARA,
