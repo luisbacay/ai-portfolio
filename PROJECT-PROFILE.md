@@ -41,7 +41,7 @@ staging_url_env: ".pentest.env"   # where PHANTOM/BOLT read staging URL
 design_source: ""            # claude_design | html_reference | none
 
 # --- Domain rules (drives MIRA-style conditional add-ons) ---
-domain_ruleset: ""           # e.g. none, or path to domain-rules.md
+domain_ruleset: "domain-rules.md"           # e.g. none, or path to domain-rules.md
 
 # --- Compliance ---
 compliance: ""                # e.g. DPA RA 10173, none
