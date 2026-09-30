@@ -77,7 +77,7 @@ blank, this is a pre-flight failure — stop, do not guess:
 - `design_source` (path or `none`)
 - `domain_ruleset` (name or `none`)
 - `deploy_method`
-- `tenancy_field` (if multi-tenant; otherwise `none`)
+- `id_convention` (if multi-tenant; otherwise `none`)
 
 If `domain_ruleset` is set but no matching agent file exists in
 `.claude/agents/`, this is a pre-flight failure — do not silently

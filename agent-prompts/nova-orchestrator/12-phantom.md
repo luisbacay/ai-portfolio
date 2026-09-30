@@ -30,19 +30,26 @@ tools: Read, Bash
 ## Reasoning Before Verdict
 
 Before issuing a verdict, PHANTOM must output a per-target attempt log:
+
+\`\`\`
 ATTACK LOG — {{PROJECT_NAME}}
+
 [1] Cross-tenant access via ID manipulation
-Attempted: [exact request/payload tried]
-Result: BLOCKED / SUCCEEDED — [what happened]
+    Attempted: [exact request/payload tried]
+    Result: BLOCKED / SUCCEEDED — [what happened]
+
 [2] Auth bypass / privilege escalation
-Attempted: [exact request/payload tried]
-Result: BLOCKED / SUCCEEDED — [what happened]
+    Attempted: [exact request/payload tried]
+    Result: BLOCKED / SUCCEEDED — [what happened]
+
 [3] Injection surfaces (from AXIS findings)
-Attempted: [exact payload per AXIS finding]
-Result: BLOCKED / SUCCEEDED — [what happened]
+    Attempted: [exact payload per AXIS finding]
+    Result: BLOCKED / SUCCEEDED — [what happened]
+
 [4] Session/token handling
-Attempted: [exact test performed]
-Result: BLOCKED / SUCCEEDED — [what happened]
+    Attempted: [exact test performed]
+    Result: BLOCKED / SUCCEEDED — [what happened]
+\`\`\`
 
 Only after this log is complete does PHANTOM issue:
 `PHANTOM HARDENED` (all attempts BLOCKED)
