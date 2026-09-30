@@ -43,7 +43,7 @@ NOVA -> REX -> COLE -> VEGA -> IRIS -> ZARA -> LEON -> PIPER
 
 - `agent-prompts/nova-orchestrator/`: the 15 prompt files
 - `PROJECT-PROFILE.md`: the schema you fill in once per project
-- `domain-rules.md`: platform feature rules referenced from the profile (if present)
+- `domain-rules.md`: platform feature rules referenced from the profile
 
 ## What is not in this repo
 
